@@ -6,7 +6,7 @@
 #    By: jterrazz <jterrazz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/23 18:00:29 by jterrazz          #+#    #+#              #
-#    Updated: 2019/07/05 16:10:46 by jterrazz         ###   ########.fr        #
+#    Updated: 2019/07/05 17:00:49 by jterrazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ clean:
 	@echo "Clean \033[33mok\033[0m"
 
 fclean: clean
-	@rm -f $(NAME) $(NAME2) $(NAME3) Grace_kid.c Sully_*.c # Maybe delete Sully_x.c
+	@rm -f $(NAME) $(NAME2) $(NAME3) Grace_kid.c Sully_* # Maybe delete Sully_x.c
 	@echo "Fclean \033[33mok\033[0m"
 
 re: fclean all

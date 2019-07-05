@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	int i = 4;
+	int i = 0;
 	if (i <= 0) return (0);
 	if (strcmp(__FILE__, "src/Sully.c"))i--;
 	char new_src_file[100];
