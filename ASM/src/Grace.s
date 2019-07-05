@@ -20,13 +20,16 @@ MAIN_BUT_NOT_MAIN
 enter 0, 0
 mov rax, SYS_OPEN
 lea rdi, [rel output]
-mov rsi, O_RDWR ; Check for errors
+mov rsi, O_RDWR
 mov rdx, O_RDWR_PERM
 syscall
 mov rdi, rax
 lea rsi, [rel code_str]
-call _dprintf ; Check for errors
-mov rdi, SYS_CLOSE
+mov rdx, 10
+mov rcx, 34
+lea r8, [rel code_str]
+call _dprintf
+mov rax, SYS_CLOSE
 syscall
 leave
 ret
