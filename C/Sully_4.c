@@ -5,20 +5,20 @@
 
 int main(void)
 {
-    int i = 5;
-    if (i <= 0) return (0);
-    char new_src_file[100];
-    sprintf(new_src_file, "Sully_%d.c", i - 1);
-    char new_exec[100];
-    sprintf(new_exec, "Sully_%d", i - 1);
-    FILE *f = fopen(new_src_file, "w");
-    if (f == NULL) return (1);
-    fprintf(f, CODE, 10, 34, CODE, i - 1, 9);
-    char compile_cmd[300];
-    sprintf(compile_cmd, "gcc -o %s %s", new_exec, new_src_file);
-    system(compile_cmd);
+	int i = 4;
+	if (i <= 0) return (0);
+	char new_src_file[100];
+	sprintf(new_src_file, "Sully_%d.c", i - 1);
+	char new_exec[100];
+	sprintf(new_exec, "Sully_%d", i - 1);
+	FILE *f = fopen(new_src_file, "w");
+	if (f == NULL) return (1);
+	fprintf(f, CODE, 10, 34, CODE, i - 1, 9);
+	char compile_cmd[300];
+	sprintf(compile_cmd, "gcc -o %s %s", new_exec, new_src_file);
+	system(compile_cmd);
 	char run_cmd[200];
-    sprintf(run_cmd, "./%s", new_exec);
-    system(run_cmd);
+	sprintf(run_cmd, "./%s", new_exec);
+	system(run_cmd);
 	return (0);
 }
