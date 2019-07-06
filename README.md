@@ -10,3 +10,7 @@ DEBUG
 	call _printf
 	; Printer
 ```
+
+TODO
+Still need to remove last line in JS
+Maybe secure the printf etc
