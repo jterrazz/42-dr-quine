@@ -6,7 +6,7 @@
 #    By: jterrazz <jterrazz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/23 18:00:29 by jterrazz          #+#    #+#              #
-#    Updated: 2019/07/06 00:04:01 by jterrazz         ###   ########.fr        #
+#    Updated: 2019/07/06 00:25:49 by jterrazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ SRC_PATH = src
 
 SOURCES += Colleen.s
 SOURCES2 += Grace.s
-# SOURCES3 += Sully.s
+SOURCES3 += Sully.s
 
 OBJECTS = $(SOURCES:%.s=$(BUILD_PATH)/%.o)
 OBJECTS2 = $(SOURCES2:%.s=$(BUILD_PATH)/%.o)
-# OBJECTS3 = $(SOURCES3:%.s=$(BUILD_PATH)/%.o)
+OBJECTS3 = $(SOURCES3:%.s=$(BUILD_PATH)/%.o)
 
 # **************************************************************************** #
 # VARIABLES         														   #
@@ -30,7 +30,7 @@ OBJECTS2 = $(SOURCES2:%.s=$(BUILD_PATH)/%.o)
 
 NAME = Colleen
 NAME2 = Grace
-# NAME3 = Sully
+NAME3 = Sully
 
 ASM_CC = nasm
 ASM_FLAGS = -f macho64
@@ -44,7 +44,7 @@ FLAGS_CC = -Wall -Wextra -Werror
 
 .PHONY: all clean fclean re test
 
-all: $(NAME) $(NAME2) # $(NAME3)
+all: $(NAME) $(NAME2) $(NAME3)
 
 $(NAME): $(OBJECTS)
 	$(CC) $(FLAGS_CC) -o $@ $^
@@ -52,8 +52,8 @@ $(NAME): $(OBJECTS)
 $(NAME2): $(OBJECTS2)
 	$(CC) $(FLAGS_CC) -o $@ $^
 
-# $(NAME3): $(OBJECTS3)
-# 	$(CC) $(FLAGS_CC) -o $@ $^
+$(NAME3): $(OBJECTS3)
+	$(CC) $(FLAGS_CC) -o $@ $^
 
 $(BUILD_PATH)/%.o: $(SRC_PATH)/%.s
 	@mkdir -p $(@D)
@@ -64,7 +64,7 @@ clean:
 	@echo "Clean \033[33mok\033[0m"
 
 fclean: clean
-	@rm -f $(NAME) $(NAME2) Grace_kid.s # $(NAME3) Sully_* # Maybe delete Sully_x.c
+	@rm -f $(NAME) $(NAME2) Grace_kid.s $(NAME3) Sully_* # Maybe delete Sully_x.c
 	@echo "Fclean \033[33mok\033[0m"
 
 re: fclean all
