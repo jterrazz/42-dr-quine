@@ -4,11 +4,16 @@
 ** Hey, this is an outside comment
 */
 
+char *get_str()
+{
+	return "#include <stdio.h>%1$c%1$c/*%1$c** Hey, this is an outside comment%1$c*/%1$c%1$cchar *get_str()%1$c{%1$c%2$creturn %3$c%4$c%3$c;%1$c}%1$c%1$cint main(void)%1$c{%1$c%2$c/*%1$c%2$c** Hey, this is an inside comment%1$c%2$c*/%1$c%2$cchar *str = get_str();%1$c%2$cprintf(str, 10, 9, 34, str);%1$c}%1$c";
+}
+
 int main(void)
 {
 	/*
 	** Hey, this is an inside comment
 	*/
-	char *str = "#include <stdio.h>%c%c/*%c** Hey, this is an outside comment%c*/%c%cint main(void)%c{%c%c/*%c%c** Hey, this is an inside comment%c%c*/%c%cchar *str = %c%s%c;%c%cprintf(str, 10, 10, 10, 10, 10, 10, 10, 10, 9, 10, 9, 10, 9, 10, 9, 34, str, 34, 10, 9, 10, 10);%c}%c";
-	printf(str, 10, 10, 10, 10, 10, 10, 10, 10, 9, 10, 9, 10, 9, 10, 9, 34, str, 34, 10, 9, 10, 10);
+	char *str = get_str();
+	printf(str, 10, 9, 34, str);
 }
