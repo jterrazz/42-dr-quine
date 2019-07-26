@@ -6,7 +6,7 @@
 #    By: jterrazz <jterrazz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/23 18:00:29 by jterrazz          #+#    #+#              #
-#    Updated: 2019/07/26 15:43:17 by jterrazz         ###   ########.fr        #
+#    Updated: 2019/07/26 17:38:27 by jterrazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,11 +54,11 @@ $(NAME3): $(OBJECTS3)
 	$(CC) $(FLAGS_CC) -c -o $@ $<
 
 clean:
-	@rm $(OBJECTS1) $(OBJECTS2) $(OBJECTS3)
+	@rm -f $(OBJECTS1) $(OBJECTS2) $(OBJECTS3)
 	@echo "C Clean \033[33mok\033[0m"
 
 fclean: clean
-	@rm -f $(NAME1) $(NAME2) $(NAME3) Grace_kid.c Sully_[0-9]{1,}.c Sully_[0-9]{1,}
+	@rm -f $(NAME1) $(NAME2) $(NAME3) Grace/Grace_kid.c Sully/Sully_[0-9]{1,}.o Sully/Sully_[0-9]{1,}.c Sully/Sully_[0-9]{1,}
 	@echo "C Fclean \033[33mok\033[0m"
 
 re: fclean all

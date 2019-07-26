@@ -15,7 +15,8 @@ function main() {
 	*/
 	printRecursion()
 }
-main()`
+main()
+`
 	console.log(codeStr, String.fromCharCode(96), codeStr, String.fromCharCode(96))
 }
 function main() {

@@ -1,7 +1,8 @@
 (function sully() {
 	const fs = require('fs')
 	const { exec } = require('child_process')
-	const codeStr = `(${sully.toString()})()`
+	const codeStr = `(${sully.toString()})()
+`
 	const currentFile = __filename.slice(__dirname.length + 1)
 
 	let i = 5
