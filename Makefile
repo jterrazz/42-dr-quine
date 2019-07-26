@@ -6,35 +6,15 @@
 #    By: jterrazz <jterrazz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/23 18:00:29 by jterrazz          #+#    #+#              #
-#    Updated: 2019/07/26 15:43:18 by jterrazz         ###   ########.fr        #
+#    Updated: 2019/07/26 16:05:18 by jterrazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-SRC_PATH = src
-
-SOURCES1 += Colleen/Colleen.s
-SOURCES2 += Grace/Grace.s
-SOURCES3 += Sully/Sully.s
-
-OBJECTS1 = $(SOURCES1:%.s=%.o)
-OBJECTS2 = $(SOURCES2:%.s=%.o)
-OBJECTS3 = $(SOURCES3:%.s=%.o)
 
 # **************************************************************************** #
 # VARIABLES         														   #
 # **************************************************************************** #
 
-NAME = dr_quine_asm
-
-NAME1 = Colleen/Colleen
-NAME2 = Grace/Grace
-NAME3 = Sully/Sully
-
-ASM_CC = nasm
-ASM_FLAGS = -f macho64
-
-CC = gcc
-FLAGS_CC = -Wall -Wextra -Werror
+NAME = dr_quine
 
 # **************************************************************************** #
 # COMMANDS  		    													   #
@@ -44,24 +24,18 @@ FLAGS_CC = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(NAME1) $(NAME2) $(NAME3)
-
-$(NAME1): $(OBJECTS1)
-	$(CC) $(FLAGS_CC) -o $@ $^
-$(NAME2): $(OBJECTS2)
-	$(CC) $(FLAGS_CC) -o $@ $^
-$(NAME3): $(OBJECTS3)
-	$(CC) $(FLAGS_CC) -o $@ $^
-
-%.o: %.s
-	@$(ASM_CC) $(ASM_FLAGS) $< -o $@
+$(NAME):
+	@make -s -C ./C
+	@make -s -C ./ASM
 
 clean:
-	@rm $(OBJECTS1) $(OBJECTS2) $(OBJECTS3)
-	@echo "ASM Clean \033[33mok\033[0m"
+	@make clean -s -C ./C
+	@make clean -s -C ./ASM
 
-fclean: clean
-	@rm -f $(NAME1) $(NAME2) $(NAME3) Grace_kid.s Sully_[0-9]{1,}.s Sully_[0-9]{1,}
-	@echo "ASM Fclean \033[33mok\033[0m"
+fclean:
+	@make fclean -s -C ./C
+	@make fclean -s -C ./ASM
 
-re: fclean all
+re:
+	@make re -s -C ./C
+	@make re -s -C ./ASM

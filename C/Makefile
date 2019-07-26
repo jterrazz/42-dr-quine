@@ -6,28 +6,29 @@
 #    By: jterrazz <jterrazz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/23 18:00:29 by jterrazz          #+#    #+#              #
-#    Updated: 2019/07/05 17:00:49 by jterrazz         ###   ########.fr        #
+#    Updated: 2019/07/26 15:43:17 by jterrazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-BUILD_PATH = obj
 SRC_PATH = src
 
-SOURCES += Colleen.c
-SOURCES2 += Grace.c
-SOURCES3 += Sully.c
+SOURCES1 += Colleen/Colleen.c
+SOURCES2 += Grace/Grace.c
+SOURCES3 += Sully/Sully.c
 
-OBJECTS = $(SOURCES:%.c=$(BUILD_PATH)/%.o)
-OBJECTS2 = $(SOURCES2:%.c=$(BUILD_PATH)/%.o)
-OBJECTS3 = $(SOURCES3:%.c=$(BUILD_PATH)/%.o)
+OBJECTS1 = $(SOURCES1:%.c=%.o)
+OBJECTS2 = $(SOURCES2:%.c=%.o)
+OBJECTS3 = $(SOURCES3:%.c=%.o)
 
 # **************************************************************************** #
 # VARIABLES         														   #
 # **************************************************************************** #
 
-NAME = Colleen
-NAME2 = Grace
-NAME3 = Sully
+NAME = dr_quine_c
+
+NAME1 = Colleen/Colleen
+NAME2 = Grace/Grace
+NAME3 = Sully/Sully
 
 CC = gcc
 FLAGS_CC = -Wall -Wextra -Werror
@@ -36,29 +37,28 @@ FLAGS_CC = -Wall -Wextra -Werror
 # COMMANDS  		    													   #
 # **************************************************************************** #
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
 
-all: $(NAME) $(NAME2) $(NAME3)
+all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(NAME1) $(NAME2) $(NAME3)
+
+$(NAME1): $(OBJECTS1)
 	$(CC) $(FLAGS_CC) -o $@ $^
-
 $(NAME2): $(OBJECTS2)
 	$(CC) $(FLAGS_CC) -o $@ $^
-
 $(NAME3): $(OBJECTS3)
 	$(CC) $(FLAGS_CC) -o $@ $^
 
-$(BUILD_PATH)/%.o: $(SRC_PATH)/%.c
-	@mkdir -p $(@D)
+%.o: %.c
 	$(CC) $(FLAGS_CC) -c -o $@ $<
 
 clean:
-	@rm -rf $(BUILD_PATH)
-	@echo "Clean \033[33mok\033[0m"
+	@rm $(OBJECTS1) $(OBJECTS2) $(OBJECTS3)
+	@echo "C Clean \033[33mok\033[0m"
 
 fclean: clean
-	@rm -f $(NAME) $(NAME2) $(NAME3) Grace_kid.c Sully_* # Maybe delete Sully_x.c
-	@echo "Fclean \033[33mok\033[0m"
+	@rm -f $(NAME1) $(NAME2) $(NAME3) Grace_kid.c Sully_[0-9]{1,}.c Sully_[0-9]{1,}
+	@echo "C Fclean \033[33mok\033[0m"
 
 re: fclean all
