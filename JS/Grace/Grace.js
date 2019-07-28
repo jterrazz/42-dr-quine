@@ -1,6 +1,6 @@
 (function grace() {
 	/*
-		This is a self invoking function, there are no defines in javascript
+	   This is a self invoking function, there are no defines in javascript
 	*/
 	const fs = require('fs')
 	const output = "Grace_kid.js"

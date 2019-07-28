@@ -1,9 +1,9 @@
 /*
-	Outside comment
+   Outside comment
 */
 function printRecursion() {
 	const codeStr = `/*
-	Outside comment
+   Outside comment
 */
 function printRecursion() {
 	const codeStr = %s%s%s
@@ -11,7 +11,7 @@ function printRecursion() {
 }
 function main() {
 	/*
-		Inside comment
+	   Inside comment
 	*/
 	printRecursion()
 }
@@ -20,7 +20,7 @@ main()`
 }
 function main() {
 	/*
-		Inside comment
+	   Inside comment
 	*/
 	printRecursion()
 }
