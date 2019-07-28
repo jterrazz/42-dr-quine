@@ -17,8 +17,8 @@
 	fs.writeFile(src_output, codeStr.replace(`let i = ${old_i}`, `let i = ${i}`), function(err) {
 	    if (err) {
 	        return console.error(err)
-	    }
+	    } else {
+			exec(`node ${src_output}`)
+		}
 	})
-
-	exec(`node ${src_output}`)
 })()
