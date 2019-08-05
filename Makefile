@@ -6,7 +6,7 @@
 #    By: jterrazz <jterrazz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/23 18:00:29 by jterrazz          #+#    #+#              #
-#    Updated: 2019/07/26 16:05:18 by jterrazz         ###   ########.fr        #
+#    Updated: 2019/08/05 13:36:44 by jterrazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,17 +25,17 @@ NAME = dr_quine
 all: $(NAME)
 
 $(NAME):
-	@make -s -C ./C
-	@make -s -C ./ASM
+	@make -C ./C
+	@make -C ./ASM
 
 clean:
-	@make clean -s -C ./C
-	@make clean -s -C ./ASM
+	@make clean -C ./C
+	@make clean -C ./ASM
 
 fclean:
-	@make fclean -s -C ./C
-	@make fclean -s -C ./ASM
+	@make fclean -C ./C
+	@make fclean -C ./ASM
 
 re:
-	@make re -s -C ./C
-	@make re -s -C ./ASM
+	@make re -C ./C
+	@make re -C ./ASM
