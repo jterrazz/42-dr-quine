@@ -6,7 +6,7 @@
 #    By: jterrazz <jterrazz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/23 18:00:29 by jterrazz          #+#    #+#              #
-#    Updated: 2019/07/26 17:38:15 by jterrazz         ###   ########.fr        #
+#    Updated: 2019/08/05 13:34:52 by jterrazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ clean:
 	@echo "ASM Clean \033[33mok\033[0m"
 
 fclean: clean
-	@rm -f $(NAME1) $(NAME2) $(NAME3) Grace/Grace_kid.s Sully/Sully_[0-9]{1,}.o Sully/Sully_[0-9]{1,}.s Sully/Sully_[0-9]{1,}
+	@rm -f $(NAME1) $(NAME2) $(NAME3)
 	@echo "ASM Fclean \033[33mok\033[0m"
 
 re: fclean all
