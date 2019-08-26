@@ -1,5 +1,7 @@
 # 42-dr-quine
-Quine challenges implemented in C, Assembly and Javascript.
+> Quine challenges implemented in C, Assembly and Javascript.
+
+This project addresses auto-replication issues, and confronts you the Kleene's recursion theorem.
 
 ## Getting started
 ```bash
