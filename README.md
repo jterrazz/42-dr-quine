@@ -3,6 +3,8 @@
 
 This project addresses auto-replication issues, and confronts you the Kleene's recursion theorem.
 
+[Feel free to access the medium article of this repository.](https://medium.com/a-42-journey/build-your-own-quines-3dd117a89fdb)
+
 ## Getting started
 ```bash
 make
