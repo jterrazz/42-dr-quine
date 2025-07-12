@@ -5,7 +5,7 @@
 
 This project addresses auto-replication issues, and confronts you the Kleene's recursion theorem.
 
-[Access the medium article of this repository](https://medium.com/a-42-journey/build-your-own-quines-3dd117a89fdb).
+[Access the medium article of this repository](https://www.jterrazz.com/articles/4-write-a-self-replicating-quine-in-c).
 
 ## Getting started
 ```bash
